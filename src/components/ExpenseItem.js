@@ -1,10 +1,19 @@
+import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 
-function ExpenseItem(){
-    return(
-        <h1 className="text-3xl italic underline hover:not-italic">
-            Hello dsadas!
-        </h1>
+function ExpenseItem(props) {
+    return (
+        <div className='expense-item'>
+            <ExpenseDate date={props.date} />
+            <div className='expense-item__description'>
+                <h2 className='expense-item-name'>
+                    {props.title}
+                </h2>
+                <p className='expense-item__price'>
+                    $ {props.amount}
+                </p>
+            </div>
+        </div>
     )
 }
 
